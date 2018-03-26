@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2.5dp"
+        android:background="#ffffff"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_weight="0.3"
+            android:contentDescription="User Image"/>
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_toRightOf="@+id/imageView"
+            android:textColor="#333"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:text="TextView" />
+
+        <ImageView
+            android:id="@+id/starImage"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/username"
+            android:layout_toRightOf="@+id/username"
+            android:layout_weight="0.2"
+            android:src="@drawable/star" />
+
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/starImage"
+            android:layout_toRightOf="@+id/starImage"
+            android:textColor="#333"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:text="TextView"
+            android:textSize="18dp"
+            android:textColor="#333" />
+
+    </RelativeLayout>
+</LinearLayout>

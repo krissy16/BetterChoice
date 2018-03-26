@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "619851062572",
+    "firebase_url": "https://betterchoice-9b946.firebaseio.com",
+    "project_id": "betterchoice-9b946",
+    "storage_bucket": "betterchoice-9b946.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619851062572:android:fab37a0ec9bd812c",
+        "android_client_info": {
+          "package_name": "com.bondye_toujou_bon.betterchoice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "619851062572-rrtd9cdqp7vmcmf6g8ioofkavdjf76so.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bondye_toujou_bon.betterchoice",
+            "certificate_hash": "f186b1e6b5dcf5bc2222487988c29761efff23b8"
+          }
+        },
+        {
+          "client_id": "619851062572-4sdo3urd7uk6932andpqhae1aldo8crs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5SvW1uHf4Qbcd0CgZHio9qbOiduiIdk0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "619851062572-4sdo3urd7uk6932andpqhae1aldo8crs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
