@@ -22,30 +22,47 @@
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="287dp"
+                android:layout_marginBottom="252dp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginStart="50dp"
+                android:layout_marginTop="15dp"
                 android:ems="10"
                 android:hint="Password"
                 android:inputType="textPassword"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+
+            <EditText
+                android:id="@+id/editTextUsername"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="55dp"
+                android:ems="10"
+                android:hint="Username"
+                android:inputType="textEmailAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
-                android:layout_marginBottom="9dp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="85dp"
+                android:layout_marginTop="15dp"
                 android:ems="10"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextUsername" />
 
             <ProgressBar
                 android:id="@+id/progressBar"

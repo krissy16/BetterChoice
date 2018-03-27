@@ -26,7 +26,7 @@
         <activity android:name=".SignUp" />
         <activity android:name=".MapsActivity" />
         <activity android:name=".Login" />
-        <activity android:name=".TestingActivity"></activity>
+        <activity android:name=".TestingActivity" />
         <activity
             android:name=".HalfReviews"
             android:label="@string/title_activity_half_reviews" />
@@ -42,6 +42,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <activity android:name=".AddReview"></activity>
     </application>
 
 </manifest>

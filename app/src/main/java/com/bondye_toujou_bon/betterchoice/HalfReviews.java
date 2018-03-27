@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -49,6 +50,7 @@ public class HalfReviews extends FragmentActivity implements OnMapReadyCallback,
     ArrayList<Integer> Drugscores =new ArrayList<>();
 
     CustomAdapter customAdapter;
+    String address;
 
 
     ListView reviews;
@@ -87,6 +89,13 @@ public class HalfReviews extends FragmentActivity implements OnMapReadyCallback,
 
     }
 
+
+
+    public void addRecClick(View view){
+        Intent intent2=new Intent(this,AddReview.class);
+        intent2.putExtra("Address",address);
+        startActivity(intent2);
+    }
 
 
     public void addLocations(){
@@ -139,9 +148,11 @@ public class HalfReviews extends FragmentActivity implements OnMapReadyCallback,
         Intent intent = getIntent();
 
 
-        final String address = intent.getStringExtra("Address");
+        address = intent.getStringExtra("Address");
         double latitude = intent.getDoubleExtra("Latitude", 0.0);
         double longitude = intent.getDoubleExtra("Longitude", 0.0);
+
+        final String addressFnl = address;
 
         LatLng searchedCoord = new LatLng( latitude, longitude);
         myMarker=mMap.addMarker(new MarkerOptions().position(searchedCoord).title(address).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
@@ -169,9 +180,9 @@ public class HalfReviews extends FragmentActivity implements OnMapReadyCallback,
         mLocationTableRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(dataSnapshot.hasChild(address)){
+                if(dataSnapshot.hasChild(addressFnl)){
                     reviews.setAdapter(customAdapter);
-                    mLocationRef=mLocationTableRef.child(address);
+                    mLocationRef=mLocationTableRef.child(addressFnl);
                     addLocations();
                 }
                 else{

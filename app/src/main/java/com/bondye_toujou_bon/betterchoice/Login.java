@@ -78,6 +78,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     finish();
                     Intent intent = new Intent(Login.this, MapsActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    //final String userUsername = String.valueOf(editTextEmail.getText());
+                   // intent.putExtra("Username",userUsername);
                     startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();

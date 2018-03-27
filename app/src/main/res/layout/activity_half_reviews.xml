@@ -1,10 +1,17 @@
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.bondye_toujou_bon.betterchoice.HalfReviews" >
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.bondye_toujou_bon.betterchoice.HalfReviews">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
 
     <fragment
         android:id="@+id/map"
@@ -14,11 +21,12 @@
         android:layout_weight="0.4" />
 
     <LinearLayout
+        android:id="@+id/horizontalLinear"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.1"
-        android:weightSum="4"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="4">
 
         <ImageView
             android:id="@+id/starImage"
@@ -29,19 +37,20 @@
             android:layout_toRightOf="@+id/username"
             android:layout_weight="0.5"
             android:src="@drawable/star" />
+
         <TextView
             android:id="@+id/overallScore"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/starImage"
             android:layout_toRightOf="@+id/starImage"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="5"
             android:textColor="#333"
             android:textSize="25dp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:text="5" />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/bugImage"
@@ -52,19 +61,20 @@
             android:layout_toRightOf="@+id/username"
             android:layout_weight="0.5"
             android:src="@drawable/bug" />
+
         <TextView
             android:id="@+id/bugScore"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/starImage"
             android:layout_toRightOf="@+id/starImage"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="5"
             android:textColor="#333"
             android:textSize="25dp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:text="5" />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/partyImage"
@@ -75,19 +85,20 @@
             android:layout_toRightOf="@+id/username"
             android:layout_weight="0.5"
             android:src="@drawable/party" />
+
         <TextView
             android:id="@+id/neighborScore"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/starImage"
             android:layout_toRightOf="@+id/starImage"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="5"
             android:textColor="#333"
             android:textSize="25dp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:text="5" />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/drugImage"
@@ -98,19 +109,20 @@
             android:layout_toRightOf="@+id/username"
             android:layout_weight="0.5"
             android:src="@drawable/drug" />
+
         <TextView
             android:id="@+id/drugScore"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.5"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/starImage"
             android:layout_toRightOf="@+id/starImage"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:text="5"
             android:textColor="#333"
             android:textSize="25dp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:text="5" />
+            android:textStyle="bold" />
     </LinearLayout>
 
     <ListView
@@ -120,5 +132,18 @@
         android:layout_marginHorizontal="2dp"
         android:layout_marginVertical="2dp"
         android:layout_weight="0.5"
-        android:background="#000000"/>
+        android:background="#000000">
+
+    </ListView>
+
 </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/addRecordBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:onClick="addRecClick"
+        android:src="@android:drawable/btn_plus" />
+</RelativeLayout>

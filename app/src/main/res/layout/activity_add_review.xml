@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bondye_toujou_bon.betterchoice.AddReview">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="true"
+        android:focusableInTouchMode="true">
+
+        <EditText
+            android:id="@+id/Username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="23dp"
+            android:layout_marginTop="68dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
+
+        <Spinner
+            android:id="@+id/overallRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/Username"
+            android:layout_alignStart="@+id/Username"
+            android:layout_below="@+id/Username"
+            android:layout_marginTop="29dp" />
+
+        <Spinner
+            android:id="@+id/bugRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/overallRating"
+            android:layout_alignStart="@+id/overallRating"
+            android:layout_below="@+id/overallRating"
+            android:layout_marginTop="22dp" />
+
+        <Spinner
+            android:id="@+id/neighborRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/bugRating"
+            android:layout_centerVertical="true" />
+
+        <Spinner
+            android:id="@+id/drugRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/neighborRating"
+            android:layout_below="@+id/neighborRating"
+            android:layout_marginTop="25dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/comment"
+            android:layout_alignBottom="@+id/comment"
+            android:layout_alignEnd="@+id/textView8"
+            android:text="Comment" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView7"
+            android:layout_alignTop="@+id/drugRating"
+            android:text="drug Rating" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView6"
+            android:layout_alignTop="@+id/neighborRating"
+            android:text="neightbor Rating" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView5"
+            android:layout_alignTop="@+id/bugRating"
+            android:text="bug rating" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView4"
+            android:layout_alignTop="@+id/overallRating"
+            android:text="overall rating" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/overallRating"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="11dp"
+            android:text="Username" />
+
+        <EditText
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/drugRating"
+            android:layout_below="@+id/drugRating"
+            android:layout_marginTop="39dp"
+            android:ems="10"
+            android:inputType="textMultiLine" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/comment"
+            android:layout_below="@+id/comment"
+            android:layout_marginTop="27dp"
+            android:onClick="onSubmit"
+            android:text="Button" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
