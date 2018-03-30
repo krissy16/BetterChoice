@@ -10,7 +10,7 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:visibility="visible"
-    tools:context="com.bondye_toujou_bon.betterchoice.TestingActivity">
+    tools:context="com.bondye_toujou_bon.betterchoice.Settings">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraint"

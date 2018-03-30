@@ -40,25 +40,19 @@ public class HalfReviews extends FragmentActivity implements OnMapReadyCallback,
     DatabaseReference mLocationTableRef = mRootRef.child("LocationTable");
     DatabaseReference mLocationRef;
 
-    ArrayList<String> Usernames=new ArrayList<>();
-    ArrayList<Integer> Overallscores=new ArrayList<>();
-    ArrayList<String> Comments=new ArrayList<>();
-    ArrayList<Integer> Images=new ArrayList<>();
+    ArrayList<String> Usernames, Comments=new ArrayList<>();
+    ArrayList<Integer> Overallscores, Images=new ArrayList<>();
 
-    ArrayList<Integer> Bugscores=new ArrayList<>();
-    ArrayList<Integer> Neighborscores=new ArrayList<>();
-    ArrayList<Integer> Drugscores =new ArrayList<>();
+
+    ArrayList<Integer> Bugscores,Neighborscores, Drugscores=new ArrayList<>();
 
     CustomAdapter customAdapter;
     String address;
 
 
     ListView reviews;
-    public static String[] username={"Bob", "Pablo", "Betty", "Daisy"};
-    public static int[] score={0, 5, 3, 4};
-    public static String[] comment={"This is a bad place", "Best place ever!", "Pretty Average", "I was paid to give them a good review! :D"};
-    public static int[] imgId={R.drawable.bobs, R.drawable.pablos, R.drawable.bettys,R.drawable.daisys};
 
+    public static int[] imgId={R.drawable.bobs, R.drawable.pablos, R.drawable.bettys,R.drawable.daisys};
     public static int[] totalStars ={0, 5, 3, 4};
 
     TextView overallScores;
@@ -89,55 +83,6 @@ public class HalfReviews extends FragmentActivity implements OnMapReadyCallback,
 
     }
 
-
-
-    public void addRecClick(View view){
-        Intent intent2=new Intent(this,AddReview.class);
-        intent2.putExtra("Address",address);
-        startActivity(intent2);
-    }
-
-
-    public void addLocations(){
-
-
-        Images.add(R.drawable.bobs);
-        Images.add(R.drawable.pablos);
-
-        mLocationRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                HashMap<String, Object> data = (HashMap<String, Object>)dataSnapshot.getValue();
-                String username = String.valueOf(data.get("Username"));
-                String comment = String.valueOf(data.get("Comment"));
-                Integer rating = Integer.valueOf((String)data.get("Overall Rating"));
-                Usernames.add(username);
-                Overallscores.add(rating);
-                Comments.add(comment);
-                customAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-    }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -193,7 +138,7 @@ public class HalfReviews extends FragmentActivity implements OnMapReadyCallback,
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                System.out.println("The read failed: " + databaseError.getCode());
             }
         });
 
@@ -215,6 +160,74 @@ public class HalfReviews extends FragmentActivity implements OnMapReadyCallback,
             return true;
         }
         return false;
+    }
+
+
+
+    public void addRecClick(View view){
+        Intent intent2=new Intent(this,AddReview.class);
+        intent2.putExtra("Address",address);
+        startActivity(intent2);
+    }
+
+
+    public void addComment(DataSnapshot dataSnapshot){
+        HashMap<String, Object> data = (HashMap<String, Object>)dataSnapshot.getValue();
+        String username = String.valueOf(data.get("Username"));
+        String comment = String.valueOf(data.get("Comment"));
+        Integer rating = Integer.valueOf((String)data.get("Overall Rating"));
+        Usernames.add(username);
+        Overallscores.add(rating);
+        Comments.add(comment);
+    }
+
+    public void changeComment(DataSnapshot dataSnapshot){
+        HashMap<String, Object> data = (HashMap<String, Object>)dataSnapshot.getValue();
+        String username = String.valueOf(data.get("Username"));
+        String comment = String.valueOf(data.get("Comment"));
+        Integer rating = Integer.valueOf((String)data.get("Overall Rating"));
+        Usernames.add(username);
+        Overallscores.add(rating);
+        Comments.add(comment);
+    }
+
+    public void removeComment(DataSnapshot dataSnapshot){
+
+    }
+
+    public void addLocations(){
+
+
+        Images.add(R.drawable.bobs);
+        Images.add(R.drawable.pablos);
+
+        mLocationRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                addComment(dataSnapshot);
+                customAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public double average (int[] arr){
